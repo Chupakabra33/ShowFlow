@@ -1,0 +1,32 @@
+/*Home page*/
+div.home.page {
+	min-height: 60vh;
+	background: 
+		linear-gradient(rgba(0, 0, 0, 0.2), 
+		rgba(0, 0, 0, 0.2)), 
+		url(../images/banner_background_2.jpg) 
+		no-repeat 
+		fixed 0/
+		cover;
+	width: 100%;
+	display: table;
+}
+div.home.page > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-shadow: -8px 10px 10px black,  -8px -10px 10px black, 8px 10px 10px black, 8px -10px 10px black;
+}
+h1.home-title {
+	text-align: left;
+	padding-left: 20px;
+	font-size: 4em;
+	color: var(--color-light);
+	text-transform: uppercase;
+	padding-right: 25%;
+}
+p.login-status {
+	font-size: 2em;
+	padding-left: 20px;
+	margin-bottom: 0.5em;
+	color: var(--color-light);
+}
