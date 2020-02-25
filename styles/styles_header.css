@@ -1,0 +1,298 @@
+/*Header*/
+:root {
+	--color-light: #f2f2f2;
+	--color-dark: #22282a;
+	--color-accent: #ffbf00;
+	--color-accent-dark: #db9200;
+	--color-notActiveMainMenu: #66797f;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Abel', sans-serif;
+}
+html, body {
+	font-size: 100%;
+}
+span.page-name {
+	display: none;
+}
+div.index.page {
+	background-color: var(--color-light);
+}
+
+/*Header*/
+header > div.header.top-bar {
+	background-color: var(--color-dark);
+	text-align: right;
+	max-width: 100%;
+	height: auto;
+	padding: 10px 0;
+	z-index: 1;
+}
+form#loginForm,
+form#logoutForm {
+	display: inline-block;
+}
+div.login-input-box {
+	display: inline-block;
+}
+div.buttons-box {
+	display: inline-block;
+}
+form#loginForm input,
+form#logoutForm input {
+	font-size: 1.1em;
+	padding: 3.5px 15px;
+	margin: 0 5px 0 0;
+	border: none;
+	border-radius: 0.5em;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: var(--color-dark);
+}
+form#loginForm input::selection {
+	background-color: var(--color-accent);
+	color: var(--color-dark);
+}
+form#loginForm input:focus,
+form#logoutForm input:focus {
+	outline: 0;
+}
+form#loginForm input[type=submit],
+form#logoutForm input[type=submit] {
+	background-color: var(--color-accent);
+	margin-right: 15px;
+
+}
+form#loginForm input[type=submit]:hover,
+form#logoutForm input[type=submit]:hover {
+	background-color: var(--color-accent-dark);
+}
+input.login-form::placeholder {
+	font-style: italic;
+	color: var(--color-dark);
+}
+input.login-form:-webkit-autofill {
+	/* Safari support - any positive time runs instantly */
+	-webkit-animation-delay: 1s;
+	-webkit-animation-name: autofill;
+	-webkit-animation-fill-mode: both;
+}
+a#registerBtn {
+	text-decoration: none;
+	font-size: 1.1em;
+	text-align: center;
+	padding: 3.5px 15px;
+	margin: 0 20px 0 0;
+	border: 1px solid transparent;
+	color: var(--color-accent);
+}
+a#registerBtn:hover {
+	color: var(--color-accent-dark);
+	border: 1px solid var(--color-accent-dark);
+	border-radius: 0.5em;
+}
+p.login-error {
+	color: red;
+	font-size: 1.1em;
+	text-align: left;
+	margin: 0 0 5px 0;
+}
+div.header.top-background {
+	background-image: url(../images/piano.jpg);
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	width: 100%;
+	height: 10em;
+	overflow: hidden;
+	z-index: -1;
+}
+div.header.logo-box {
+	background: rgba(255,255,255,0.7);
+	max-width: 250px;
+	height: 10em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+}
+img.header.logo-img {
+	height: 4.5em;
+	width: auto;
+}
+div.header.logo-text-box {
+	max-width: 10.5em;
+	display: flex;
+	flex-direction: column;
+}
+div.header.logo-text {
+	font-size: 2.5em;
+	text-align: center;
+}
+small.header.logo-text {
+	width: 100%;
+	font-size: 1.2em;
+	margin-top: -10px;
+	text-align: center;
+}
+
+/* Main menu */
+nav.main-menu {
+	display: block;
+}
+button.open-btn,
+a.close-btn {
+	display: none;
+}
+
+
+ul.header.main-menu {
+	background-color: var(--color-accent);
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+}
+ul.header.main-menu > li {
+	list-style-type: none;
+}
+a.header {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.5em;
+	padding: 10px 20px;
+}
+a.header:not(.active) {
+	color: var(--color-dark);
+}
+a.header:hover:not(.active) {
+	background-color: var(--color-accent-dark);
+}
+a.active {
+	background-color: var(--color-dark);
+	color: var(--color-light);
+}
+
+/* Media queries */
+@media screen and (max-width: 620px) {
+	header div.header.top-bar {
+		height: auto;
+		padding: 10px 20px;
+	}
+	form#loginForm {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+	}
+	div.login-input-box {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+	div.buttons-box {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+	input.login-form {
+		width: 43% !important;
+	}
+	input#usernameEmail {
+		margin: 0 5px 10px 0 !important;
+	}
+	input#loginPassword {
+		margin: 0 0 10px 5px !important;
+	}
+	form#loginForm input[type=submit],
+	a#registerBtn {
+		margin: 0;
+	}
+	ul.header.main-menu {
+		justify-content: space-around;
+	}
+	ul.header.main-menu > li {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	p.login-error {
+		text-align: center;
+	}
+	div.header.top-background {
+		height: auto;
+	}
+	div.header.logo-box {
+		max-width: 100%;
+		justify-content: center;
+		margin-top: -55px;
+	}
+	button.open-btn {
+		display: block;
+		font-size: 2em;
+		font-weight: bold;
+		background-color: transparent;
+		color: var(--color-dark);
+		border: none;
+		padding: 5px 10px;
+	}
+	button.open-btn:focus {
+		outline: 0;
+	}
+	nav.main-menu {
+		position: fixed;
+		z-index: 1;
+		height: auto;
+		top: 90px;
+		left: 0;
+		background-color: var(--color-dark);
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 0;
+	}
+	ul.header.main-menu {
+		padding: 50px 0;
+		display: block;
+		background-color: var(--color-dark);
+	}
+	a.header {
+		text-align: left;
+		
+	}
+	a.header:not(.active) {
+		background-color: var(--color-dark);
+		color: var(--color-notActiveMainMenu);
+	}
+	a.header:hover:not(.active),
+	a.close-btn:hover {
+		background-color: var(--color-dark);
+		color: var(--color-light);
+		transition: 1s;
+	}
+	a.active {
+		background-color: var(--color-dark);
+		color: var(--color-accent);
+	}
+	a.close-btn {
+		display: block;
+		text-decoration: none;
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		font-weight: bold;
+		color: var(--color-notActiveMainMenu);
+	}
+	.open-sidepanel {
+		width: 250px;
+	}
+	.closed-sidepanel {
+		width: 0;
+	}
+
+}
