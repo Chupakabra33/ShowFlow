@@ -15,7 +15,7 @@ while($row = $result -> fetch_array(MYSQLI_ASSOC)) {
 	$output .= '{"eventName":"' . $row["EventName"] . '",';
 	$output .= '"eventTime":"' . $row["EventTime"] . '",';
 	$output .= '"eventPlace":"' . $row["EventPlace"]  . '",';
-	$output .= '"eventImgSrc":"' . $row["EventImgDir"] . $row["EventImgName"] . '",';
+	$output .= '"eventImgDir":"' . $row["EventImgDir"]  . '",';
 	$output .= '"eventImgName":"' . $row["EventImgName"] . '"}';
 }
 
