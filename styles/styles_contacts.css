@@ -1,5 +1,15 @@
+
 main#mainContacts {
-	min-height: 60vh;
+	width: 100%;
+}
+div.contacts.main-box,
+div.contacts.info-box,
+div.contacts.details,
+div.contacts.details-location,
+div.contacts-big-background {
+	display: flex;
+}
+div.contacts-big-background {
 	background: 
 		linear-gradient(
 			rgba(255, 255, 255, 0.6), 
@@ -10,10 +20,70 @@ main#mainContacts {
 		fixed 0 /
 		cover;
 	width: 100%;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: -1;
 }
+div.contacts.main-box {
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	background: var(--color-dark);
+
+	color: var(--color-light);
+	padding: 40px 0;
+}
+
+/* Info box */
+div.contacts.info-box > div.contacts {
+	margin-bottom: 50px;
+}
+div.contacts.guests-box {
+	margin-right: 50px;
+}
+div.contacts.details:not(:last-child) {
+	margin-bottom: 10px;
+}
+img.contacts.icon {
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+img.contacts.icon-location {
+	height: 35px;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+div.contacts h2 {
+	font-size: 2.2em;
+	margin-bottom: 10px;
+}
+div.contacts p {
+	font-size: 1.5em;
+}
+
+/* Location box */
+div.contacts.location-box {
+	width: 575px;
+}
+iframe.contacts.map {
+	display: block;
+	width: 100%;
+	height: 15em;
+	border: none;
+}
+div.contacts.location-box a {
+	color: var(--color-light);
+	font-size: 1em;
+	text-decoration: none;
+	float: right;
+}
+div.contacts.location-box a:hover {
+	color: var(--color-accent);
+}
+
+/* Contact form */
+
 div.contacts-background {
 	background: linear-gradient(
 		rgba(0, 0, 0, 0.6),
@@ -23,7 +93,7 @@ div.contacts-background {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 4em 0;
+	margin: 5em 0;
 	padding: 30px;
 	box-shadow: 0px 0px 18px 3px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 0px 18px 3px rgba(0,0,0,0.75);
@@ -92,6 +162,8 @@ input.contact-form[type=submit] {
 	margin: 1.5em auto 1.5em auto;
 	background-color: var(--color-accent);
 	color: var(--color-dark);
+	cursor: pointer;
+	transition: 1s;
 }
 input.contact-form[type=submit]:hover {
 	background-color: var(--color-accent-dark);
@@ -132,4 +204,72 @@ p.message-sent {
 	padding: 0.3em 0.8em;
 	border: 1.5px solid var(--color-light);
 	border-radius: 0.5em;
+}
+
+/* Media queries */
+@media screen and (max-width: 620px) {
+	img.contacts.icon {
+		height: 15px;
+		margin-right: 10px;
+		margin-top: 5px;
+	}
+	img.contacts.icon-location {
+		height: 25px;
+		margin-right: 10px;
+		margin-top: 5px;
+	}
+	div.contacts h2 {
+		font-size: 1.6em;
+	}
+	div.contacts p {
+		font-size: 1.1em;
+	}
+	div.contacts.main-box {
+		align-items: initial;
+		padding-bottom: 5px;
+
+	}
+	div.contacts.info-box {
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+	div.contacts.guests-box {
+		margin-right: 0;
+	}
+	div.contacts.location-box {
+		width: 100%;
+	}
+	div.contacts.location-box div.details-location,
+	div.contacts.location-box a {
+		padding: 0 20px; 
+	}
+
+	div.contacts-background {
+		padding: 0;
+		width: 25em;
+	}
+}
+@media screen and (max-width: 500px) {
+	div.contacts.info-box {
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 450px) {
+	iframe.contacts.map {
+		height: 11em;
+	}
+	div.contacts-background {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 100%;
+		margin: 0;
+		box-shadow: none;
+	}
+	fieldset.contact-form {
+		padding: 0 1em;
+	}
+	legend.contact-form {
+		margin: 0 0 0.5em 0;
+		text-align: center; 
+	}
 }

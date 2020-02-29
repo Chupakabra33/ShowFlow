@@ -31,8 +31,8 @@ header > div.header.top-bar {
 	padding: 10px 0;
 	z-index: 1;
 }
-form#loginForm,
-form#logoutForm {
+form.login-form,
+form.logout-form {
 	display: inline-block;
 }
 div.login-input-box {
@@ -41,8 +41,8 @@ div.login-input-box {
 div.buttons-box {
 	display: inline-block;
 }
-form#loginForm input,
-form#logoutForm input {
+form.login-form input,
+form.logout-form input {
 	font-size: 1.1em;
 	padding: 3.5px 15px;
 	margin: 0 5px 0 0;
@@ -51,22 +51,23 @@ form#logoutForm input {
 	background-color: rgba(255, 255, 255, 0.4);
 	color: var(--color-dark);
 }
-form#loginForm input::selection {
+form.login-form input::selection {
 	background-color: var(--color-accent);
 	color: var(--color-dark);
 }
-form#loginForm input:focus,
-form#logoutForm input:focus {
+form.login-form input:focus,
+form.logout-form input:focus {
 	outline: 0;
 }
-form#loginForm input[type=submit],
-form#logoutForm input[type=submit] {
+form.login-form input[type=submit],
+form.logout-form input[type=submit] {
 	background-color: var(--color-accent);
 	margin-right: 15px;
-
+	cursor: pointer;
+	transition: 1s;
 }
-form#loginForm input[type=submit]:hover,
-form#logoutForm input[type=submit]:hover {
+form.login-form input[type=submit]:hover,
+form.logout-form input[type=submit]:hover {
 	background-color: var(--color-accent-dark);
 }
 input.login-form::placeholder {
@@ -87,6 +88,7 @@ a#registerBtn {
 	margin: 0 20px 0 0;
 	border: 1px solid transparent;
 	color: var(--color-accent);
+	transition: 1s;
 }
 a#registerBtn:hover {
 	color: var(--color-accent-dark);
@@ -148,8 +150,6 @@ button.open-btn,
 a.close-btn {
 	display: none;
 }
-
-
 ul.header.main-menu {
 	background-color: var(--color-accent);
 	display: flex;
@@ -168,6 +168,7 @@ a.header {
 }
 a.header:not(.active) {
 	color: var(--color-dark);
+	transition: 1s;
 }
 a.header:hover:not(.active) {
 	background-color: var(--color-accent-dark);
@@ -183,7 +184,7 @@ a.active {
 		height: auto;
 		padding: 10px 20px;
 	}
-	form#loginForm {
+	form.login-form {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -200,15 +201,16 @@ a.active {
 		flex-direction: row-reverse;
 	}
 	input.login-form {
-		width: 43% !important;
+		width: 43%;
 	}
 	input#usernameEmail {
-		margin: 0 5px 10px 0 !important;
+		margin: 0 5px 10px 0;
 	}
 	input#loginPassword {
-		margin: 0 0 10px 5px !important;
+		margin: 0 0 10px 5px;
 	}
-	form#loginForm input[type=submit],
+	form.login-form input[type=submit],
+	form.logout-form input[type=submit],
 	a#registerBtn {
 		margin: 0;
 	}
@@ -239,21 +241,27 @@ a.active {
 		background-color: transparent;
 		color: var(--color-dark);
 		border: none;
-		padding: 5px 10px;
+		padding: 5px 20px;
+		cursor: pointer;
 	}
 	button.open-btn:focus {
 		outline: 0;
 	}
 	nav.main-menu {
-		position: fixed;
+		position: absolute;
 		z-index: 1;
 		height: auto;
-		top: 90px;
 		left: 0;
 		background-color: var(--color-dark);
 		overflow-x: hidden;
 		transition: 0.5s;
 		padding-top: 0;
+	}
+	nav.position-for-login {
+		top: 90px;
+	}
+	nav.position-for-logout {
+		top: 47px;
 	}
 	ul.header.main-menu {
 		padding: 50px 0;
@@ -262,17 +270,17 @@ a.active {
 	}
 	a.header {
 		text-align: left;
-		
 	}
 	a.header:not(.active) {
 		background-color: var(--color-dark);
 		color: var(--color-notActiveMainMenu);
+		transition: 1s;
+
 	}
 	a.header:hover:not(.active),
 	a.close-btn:hover {
 		background-color: var(--color-dark);
 		color: var(--color-light);
-		transition: 1s;
 	}
 	a.active {
 		background-color: var(--color-dark);
@@ -287,12 +295,41 @@ a.active {
 		font-size: 36px;
 		font-weight: bold;
 		color: var(--color-notActiveMainMenu);
+		transition: 1s;
 	}
-	.open-sidepanel {
+	nav.open-sidepanel {
 		width: 250px;
 	}
-	.closed-sidepanel {
+	nav.closed-sidepanel {
 		width: 0;
 	}
+}
 
+@media screen and (max-width: 400px) {
+	div.login-input-box {
+		flex-direction: column;
+	}
+	input#usernameEmail,
+	input#loginPassword {
+		width: initial;
+		margin: 5px 0;
+	}
+	div.buttons-box {
+		margin-top: 5px;
+	}
+	nav.position-for-login {
+		top: 132px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	nav.open-sidepanel {
+		width: 100%;
+	}
+	a.header {
+		text-align: center;
+	}
+	ul.header.main-menu {
+		padding: 20px 0 10px 0;
+	}
 }

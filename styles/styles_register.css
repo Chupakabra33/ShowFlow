@@ -64,6 +64,8 @@ input[type=submit].register-form-input {
 	margin-bottom: 1.5em;
 	background-color: var(--color-accent);
 	color: var(--color-dark);
+	cursor: pointer;
+	transition: 1s;
 }
 input[type=submit].register-form-input:hover {
 	background-color: var(--color-accent-dark);
@@ -107,4 +109,31 @@ p.registration-successful {
 	padding: 0.3em 0.8em;
 	border: 1.5px solid green;
 	border-radius: 0.5em;
+}
+
+/* Media queries */
+@media screen and (max-width: 620px) {
+	div.register-background {
+		width: 23em;
+	}
+	form#registerForm {
+		width: 19em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	div.register-background {
+		width: 100%;
+		margin: 1px 0 0 0;
+		box-shadow: none;
+	}
+	form#registerForm {
+		width: 85%;
+	}
+	h1.register-title {
+		margin-top: 30px;
+	}
+	input[type=submit].register-form-input {
+		margin-bottom: 50px;
+	}
 }

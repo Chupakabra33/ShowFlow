@@ -31,10 +31,7 @@ div.event-box:not(:last-child) {
 div.event-box:last-child {
 	margin: 0;
 }
-div.event-box:hover {
-	max-width: 100%;
-}
-div.img-box {
+div.events.img-box {
 	width: auto;
 	height: 320px;
 }
@@ -56,3 +53,62 @@ p.events {
 }
 p.event-time {
 	margin-top: 1em;
+}
+
+/* Media queries */
+@media screen and (min-width: 921px) {
+	div.event-box:hover {
+		max-width: 100%;
+
+	}
+}
+
+@media screen and (max-width: 920px) {
+	div.event-box {
+		max-width: 100%;
+	}
+	div.img-box {
+		height: 270px;
+	}
+	h2.events {
+		font-size: 2.2em;
+	}
+	p.events {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	div.event-box {
+		flex-direction: column;
+	}
+	div.events.img-box {
+		width: 100%;
+		height: auto;
+	}
+	img.events {
+		width: 100%;
+		height: auto;
+	}
+	div.event-box:not(:last-child) {
+		margin-bottom: 5em;
+	}
+	div.event-box:last-child {
+		margin-bottom: 2em;
+	}
+	div.event-info {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		margin: 10px 20px 20px 20px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	h2.events {
+		font-size: 1.6em;
+	}
+	p.events {
+		font-size: 1.2em;
+	}
+}
