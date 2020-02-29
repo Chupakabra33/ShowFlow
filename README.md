@@ -2,9 +2,9 @@
 This is my final course project on the web development education course for beginners.
 Time for development: 3 month, working only during weekends.
 Technologies, libraries and programming languages used:
-  HTML, CSS, Javascript, jQuery, AngularJS, Ajax, PHP, SQL, PHPMailer
-and
-  XAMPP, Apache, MySQL
+  - HTML, CSS, Javascript, jQuery, AngularJS, Ajax, PHP, SQL, PHPMailer
+...and
+  - XAMPP, Apache, MySQL
 
 The website represents (the beginning) of an online platform for booking events of almost any type, although for now it only presents the events without the booking and ticket purchase ability, because my knowlege is still basic. The website has a full responsive design suitable for even the smallest divices.
 There are a few pages to explore:
