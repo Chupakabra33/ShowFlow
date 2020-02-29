@@ -3,10 +3,10 @@
 ?>
 
 <main id="mainEvents" ng-app="eventsApp" ng-controller="eventsCtrl">
-	<span class="page-name">events.php</span><!-- TEST -->
+	<span class="page-name">events.php</span>
 	<div ng-repeat="x in events" class="event-box">
 		<div class="events img-box">
-			<img class="events" src="{{x.eventImgDir}}{{x.eventImgName}}" alt="{{x.eventImgName}}"/>
+			<img class="events" src="{{x.eventImgSrc}}" alt="{{x.eventImgName}}"/>
 		</div>
 		<div class="events event-info">
 			<h2 class="events">{{x.eventName}}</h2>

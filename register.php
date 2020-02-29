@@ -34,7 +34,7 @@
 		?>
 
 		<form action="./includes/register.inc.php" method="post" id="registerForm">
-			<input id="username" class="register-form-input" type="text" name="username" placeholder="Username *" minlength="2" autofocus="on">
+			<input id="username" class="register-form-input" type="text" name="username" placeholder="Username *" minlength="2" autofocus="on"/>
 			<?php
 				if (isset($_GET['error'])) {
 					if ($_GET['error'] == 'invalidusername') {
@@ -44,7 +44,7 @@
 					}
 				}
 			?>
-			<input id="email" class="register-form-input" type="email" name="email" placeholder="E-mail *">
+			<input id="email" class="register-form-input" type="email" name="email" placeholder="E-mail *"/>
 			<?php
 				if (isset($_GET['error'])) {
 					if ($_GET['error'] == 'invalidmail') {
@@ -52,7 +52,7 @@
 					}
 				}
 			?>
-			<input id="fullName" class="register-form-input" type="text" name="fullname" placeholder="Full name (e.g. John Doe)">
+			<input id="fullName" class="register-form-input" type="text" name="fullname" placeholder="Full name (e.g. John Doe)"/>
 			<?php
 				if (isset($_GET['error'])) {
 					if ($_GET['error'] == 'invalidfullname') {
@@ -60,8 +60,8 @@
 					}
 				}
 			?>
-			<input id="password" class="register-form-input" type="password" name="password" placeholder="Password (at least 6 symbols) *" minlength="6"  autocomplete="off">
-			<input id="confirmPass" class="register-form-input"type="password" name="confirmPass" placeholder="Confirm password *" autocomplete="off">
+			<input id="password" class="register-form-input" type="password" name="password" placeholder="Password (at least 6 symbols) *" minlength="6"  autocomplete="off"/>
+			<input id="confirmPass" class="register-form-input"type="password" name="confirmPass" placeholder="Confirm password *" autocomplete="off"/>
 			<?php
 				if (isset($_GET['error'])) {
 					if ($_GET['error'] == 'passwordnotmatch') {

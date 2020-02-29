@@ -15,18 +15,25 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.2.9"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.4.1"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_footer.css?v1.0.0"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_home.css?v1.2.5"/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_events.css?v1.0.5"/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_contacts.css?v1.1.1"/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_register.css?v1.0.4"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_events.css?v1.0.9"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_contacts.css?v1.2.0"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_register.css?v1.0.7"/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+crossorigin=""/>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous">
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" 
+		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		crossorigin="">
+	</script>
 
 </head>
 
@@ -37,11 +44,11 @@
 
 				<?php
 					if (isset($_SESSION['accountName'])) {
-						echo '<form action="./includes/logout.inc.php" method="post" id="logoutForm">
-						<input type="submit" name="logout-submit" value="Logout"/>
-					</form>';
+						echo '<form action="./includes/logout.inc.php" method="post" class="logout-form">
+								<input type="submit" name="logout-submit" value="Logout"/>
+							</form>';
 					} else {
-						echo '<form action="./includes/login.inc.php" method="post" id="loginForm">';
+						echo '<form action="./includes/login.inc.php" method="post" class="login-form">';
 						if (isset($_GET['error'])) {
 							if ($_GET['error'] == 'emptyfieldslogin') {
 								echo '<p class="login-error">Please, enter username/e-mail and password</p>';
