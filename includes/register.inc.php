@@ -13,6 +13,7 @@ if (isset($_POST['register'])) {
 
 	$username_regex = "/^(?!.*\.\.)(?!.*\.$)[^\W][\w.' -]{1,29}$/";
 	$fullname_regex = "/^(?=.{2,20}$)[^0-9\,\"\?\!\;\:\#\$\%\&\(\)\*\+\-\/\<\>\=\@\[\]\\\^\_\{\}\|\~]*$|^$/";
+	$password_regex = "/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,}$/";
 					  
 	if (empty($username) || 
 		empty($email) ||  
@@ -42,6 +43,8 @@ if (isset($_POST['register'])) {
 	} else if (!preg_match($fullname_regex, $fullname)) {
 		header("location: ../register.php?error=invalidfullname&email=" . $email . "&username=" . $username);
 		exit();
+	} else if (!preg_match($password_regex, $password)) {
+		header("location: ../register.php?error=invalidpassword&username=" . $username . "&email=" . $email . "&fullname=" . $fullname);
 	} else if ($password !== $confirmPass) {
 		header("location: ../register.php?error=passwordnotmatch&username=" . $username . "&email=" . $email . "&fullname=" . $fullname);
 		exit();
