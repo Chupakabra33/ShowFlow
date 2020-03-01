@@ -61,6 +61,13 @@
 				}
 			?>
 			<input id="password" class="register-form-input" type="password" name="password" placeholder="Password (at least 6 symbols) *" minlength="6"  autocomplete="off"/>
+			<?php
+				if (isset($_GET['error'])) {
+					if ($_GET['error'] == 'invalidpassword') {
+						echo '<p class="reg-error registration-error-group2">Password must be at least 6 symbols, must contain uppercase, lowercase, a digit and a special symbol.</p>';
+					}
+				}
+			?>
 			<input id="confirmPass" class="register-form-input"type="password" name="confirmPass" placeholder="Confirm password *" autocomplete="off"/>
 			<?php
 				if (isset($_GET['error'])) {
