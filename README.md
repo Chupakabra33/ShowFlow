@@ -1,6 +1,6 @@
 # ShowFlow
 This is my final course project on the web development education course for beginners.
-Time for development: 3 month, working only during weekends.
+Time for development: 2 months, working only during weekends.
 Technologies, libraries and programming languages used:
   - HTML, CSS, Javascript, jQuery, AngularJS, Ajax, PHP, SQL, PHPMailer
   - XAMPP, Apache, MySQL
