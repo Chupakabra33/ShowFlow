@@ -1,5 +1,6 @@
 $(function() {
 	let mainContainer = $('div.index.page');
+	let toTopBtn = mainContainer.find('img.scrollToTop');
 	let allTabs = mainContainer.find('a.tab');
 	let pageName = mainContainer.find('span.page-name').text();
 	let currentTab = mainContainer.find('a[href="http://localhost/show_flow_course_project/' + pageName + '"].tab');
@@ -9,6 +10,29 @@ $(function() {
 	let closeBtn = mainContainer.find('a.close-btn');
 
 	let logoutForm = mainContainer.find('form.logout-form');
+
+	//Hide and show 'scroll to top' button on window scroll
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 300) {
+			toTopBtn.animate({
+				height: 'show',
+				width: 'show',
+				bottom: 'show'
+			});
+		} else {
+			toTopBtn.animate({
+				height: 'hide',
+				width: 'hide',
+				bottom: 'hide'
+			});
+		}
+	});
+
+	//Scroll to top button functionality
+	toTopBtn.click(function() {
+		$('html, body').scrollTop(0);
+		return false;
+	});
 
 	//Class 'active' on tabs in main menu
 	allTabs.removeClass('active');
