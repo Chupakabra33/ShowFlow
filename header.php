@@ -15,15 +15,15 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.4.1"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.4.54"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_footer.css?v1.0.0"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_home.css?v1.2.5"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_events.css?v1.0.9"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_contacts.css?v1.2.0"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_register.css?v1.0.7"/>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
-integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-crossorigin=""/>
+			integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+			crossorigin=""/>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -39,6 +39,7 @@ crossorigin=""/>
 
 <body>
 	<div class="index page">
+		<img class="scrollToTop" src="./images/icons/arrow_up_white.png"/>
 		<header>
 			<div class="header top-bar">
 
