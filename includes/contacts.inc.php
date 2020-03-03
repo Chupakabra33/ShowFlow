@@ -25,13 +25,6 @@ Tel: {$phone}
 Message:
 {$message}
 EOT;
-	#$text = '<b><u>Sender details</u></b><br>Name: '.$name.'<br>'.'e-mail: '.$sender_mail.'<br>'.'tel: '.$phone.'<br><br>'.'<b><u>Message</u></b><br>'.$message;
-
-	/*
-	If I choose to use the mail() function of PHP then I set $headers:
-	$headers = 'From: '.$sender_mail;
-	mail($receiver_mail, $subject, $text, $headers);
-	*/
 
 	//SMTP settings
 	#$mailer -> SMTPDebug  = 3;
