@@ -1,4 +1,4 @@
-/*Header*/
+/* styles_header.css */
 :root {
 	--color-light: #f2f2f2;
 	--color-dark: #22282a;
@@ -16,29 +16,34 @@ html, body {
 	font-size: 100%;
 	scroll-behavior: smooth;
 }
-img.scrollToTop {
-	display: none;
-	position: fixed;
-	width: 50px;
-	height: 50px;
+/* 'Scroll to top' button */
+span.icon-show {
 	bottom: 40px;
+}
+span.icon-hide {
+	bottom: -50px;
+}
+span.fas.fa-arrow-circle-up {
+	position: fixed;
 	right: 20px;
-	padding: 10px;
+	font-size: 3em;
+	color: var(--color-light);
 	cursor: pointer;
-	transition: transform 0.3s;
 	z-index: 2;
+	transition: bottom 0.7s, font-size 0.5s, color 0.5s;
 }
-img.scrollToTop:hover {
-	transform: scale(1.5);
-}
-span.page-name {
-	display: none;
+span.fas.fa-arrow-circle-up:hover {
+	font-size: 3.8em;
+	color: var(--color-accent);
 }
 div.index.page {
 	background-color: var(--color-light);
 }
+span.page-name {
+	display: none;
+}
 
-/*Header*/
+/* Header */
 header > div.header.top-bar {
 	background-color: var(--color-dark);
 	text-align: right;
@@ -239,6 +244,19 @@ a.active {
 }
 
 @media screen and (max-width: 450px) {
+	span.icon-show {
+		bottom: 10px;
+	}
+	span.icon-hide {
+		bottom: -40px;
+	}
+	span.fas.fa-arrow-circle-up {
+		font-size: 2.5em;
+		right: 10px;
+	}
+	span.fas.fa-arrow-circle-up:hover {
+		font-size: 3em;
+	}
 	p.login-error {
 		text-align: center;
 	}
