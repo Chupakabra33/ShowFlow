@@ -15,8 +15,8 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.4.54"/>
-	<link rel="stylesheet" type="text/css" href="./styles/styles_footer.css?v1.0.0"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_header.css?v1.5.2"/>
+	<link rel="stylesheet" type="text/css" href="./styles/styles_footer.css?v1.0.2"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_home.css?v1.2.5"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_events.css?v1.0.9"/>
 	<link rel="stylesheet" type="text/css" href="./styles/styles_contacts.css?v1.2.0"/>
@@ -34,12 +34,16 @@
 		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 		crossorigin="">
 	</script>
+	<script 
+		src="https://kit.fontawesome.com/bba72883df.js" 
+		crossorigin="anonymous">
+	</script>
 
 </head>
 
 <body>
 	<div class="index page">
-		<img class="scrollToTop" src="./images/icons/arrow_up_white.png"/>
+		<span class="fas fa-arrow-circle-up"></span>
 		<header>
 			<div class="header top-bar">
 
